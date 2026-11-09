@@ -1,11 +1,9 @@
 class Node:
-
     def __init__(self, data):
         self.data = data
         self.next = None
 
 class Queue:
-
     def __init__(self):
         self.front = self.rear = None
 
@@ -15,9 +13,10 @@ class Queue:
     # Method to add an item to the queue
     def EnQueue(self, item):
         temp = Node(item)
+
         if self.rear == None:
-         self.front = self.rear = temp
-        return
+            self.front = self.rear = temp
+            return
         self.rear.next = temp
         self.rear = temp
 
@@ -25,7 +24,6 @@ class Queue:
     def DeQueue(self):
         if self.isEmpty():
             return
-
         temp = self.front
         self.front = temp.next
 
@@ -42,7 +40,5 @@ if __name__ == '__main__':
     q.EnQueue(40)
     q.EnQueue(50)
     q.DeQueue()
-print("Queue Front : " + str(q.front.data if q.front != None
-              else -1))
-print("Queue Rear : " + str(q.rear.data if q.rear != None
-              else -1))
+    print("Queue Front : " + str(q.front.data if q.front != None else -1))
+    print("Queue Rear : " + str(q.rear.data if q.rear != None else -1))
